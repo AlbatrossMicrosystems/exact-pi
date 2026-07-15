@@ -1,6 +1,6 @@
 {
   "name": "exact-pi",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Exact decimal prefixes of pi to ten million digits and beyond — binary-splitting Chudnovsky on native BigInt, zero runtime dependencies, triple independent cross-verification (Machin, BBP), SHA-256 certificates.",
   "type": "module",
   "main": "dist/index.js",
@@ -28,6 +28,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/AlbatrossMicrosystems/exact-pi.git"
+  },
+  "homepage": "https://github.com/AlbatrossMicrosystems/exact-pi#readme",
+  "bugs": {
+    "url": "https://github.com/AlbatrossMicrosystems/exact-pi/issues"
   },
   "keywords": [
     "pi",

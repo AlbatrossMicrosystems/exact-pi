@@ -1,21 +1,71 @@
 #!/usr/bin/env node
 /**
- * Demo CLI for exact-pi.
+ * CLI for exact-pi.
  *
- *   npm run demo                 # 10,000 digits + verification
- *   npm run demo -- 100000       # any digit count
- *   npm run demo -- 1000 --print # also print all digits
+ *   npx exact-pi                 # 10,000 digits + verification
+ *   npx exact-pi 100000          # any digit count
+ *   npx exact-pi 1000 --print    # also print all digits
+ *   npx exact-pi --help          # full usage
  */
 
-import { certifyPiDigits, computePiDigits } from "./index.js";
+import { certifyPiDigits, computePiDigits, MAX_DIGITS } from "./index.js";
+
+const HELP = `exact-pi — exact truncated decimal prefixes of pi
+
+Every digit emitted is a true digit of pi: computed by the Chudnovsky series
+with binary splitting over native BigInt (zero runtime dependencies),
+truncated (never rounded) under an ambiguity-tested guard band, and
+cross-verified by Machin's formula (1706) and BBP hex extraction (1995).
+Verified against independent published references to 10,000,000 digits.
+
+Usage:
+  exact-pi [digits] [--print]
+
+Arguments:
+  digits        decimal places to compute (1..${MAX_DIGITS.toLocaleString("en-US")}; default 10,000)
+
+Options:
+  --print       print every digit instead of head/tail excerpts
+  --help, -h    show this help
+  --version, -v show version
+
+Examples:
+  exact-pi 100                 # the canonical 100-digit reference value
+  exact-pi 1000000             # a million exact digits (~30 s)
+  exact-pi 50 --print          # 3.14159265358979323846...
+
+Output includes a verification block (Chudnovsky vs Machin, BBP hex
+spot-checks) and a reproducible SHA-256 certificate of the computed prefix.
+
+Library use:  import { computePiDigits } from "exact-pi"
+Docs & math:  https://github.com/AlbatrossMicrosystems/exact-pi`;
 
 const args = process.argv.slice(2);
-const digitsArg = args.find((a) => !a.startsWith("--"));
+
+if (args.includes("--help") || args.includes("-h")) {
+  console.log(HELP);
+  process.exit(0);
+}
+if (args.includes("--version") || args.includes("-v")) {
+  const { createRequire } = await import("node:module");
+  const pkg = createRequire(import.meta.url)("../package.json") as { version: string };
+  console.log(`exact-pi ${pkg.version}`);
+  process.exit(0);
+}
+
+const flags = args.filter((a) => a.startsWith("-"));
+const unknown = flags.filter((a) => a !== "--print");
+if (unknown.length > 0) {
+  console.error(`unknown option: ${unknown[0]}\n\n${HELP}`);
+  process.exit(1);
+}
+
+const digitsArg = args.find((a) => !a.startsWith("-"));
 const digits = digitsArg ? Number.parseInt(digitsArg, 10) : 10_000;
 const printAll = args.includes("--print");
 
-if (!Number.isInteger(digits) || digits < 1) {
-  console.error("usage: demo [digits >= 1] [--print]");
+if (!Number.isInteger(digits) || digits < 1 || digits > MAX_DIGITS) {
+  console.error(`digits must be an integer in 1..${MAX_DIGITS.toLocaleString("en-US")}\n\n${HELP}`);
   process.exit(1);
 }
 

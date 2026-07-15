@@ -1,5 +1,11 @@
 # exact-pi
 
+[![npm](https://img.shields.io/npm/v/exact-pi)](https://www.npmjs.com/package/exact-pi)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![node >= 20](https://img.shields.io/badge/node-%3E%3D20-brightgreen)](package.json)
+[![dependencies: 0](https://img.shields.io/badge/runtime%20dependencies-0-brightgreen)](package.json)
+[![verified: 10M digits](https://img.shields.io/badge/verified-10%2C000%2C000%20digits-blueviolet)](verification/REPORT.md)
+
 Exact finite decimal prefixes of π to arbitrary length — 1,000,000 digits in
 under 30 seconds, 10,000,000 in under 40 minutes, single-threaded — with
 **zero runtime dependencies**, built on native `bigint`, and cross-verified
