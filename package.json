@@ -1,6 +1,6 @@
 {
   "name": "exact-pi",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Exact decimal prefixes of pi to ten million digits and beyond — binary-splitting Chudnovsky on native BigInt, zero runtime dependencies, triple independent cross-verification (Machin, BBP), SHA-256 certificates.",
   "type": "module",
   "main": "dist/index.js",
