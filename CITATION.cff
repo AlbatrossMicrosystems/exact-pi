@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "exact-pi: Exact ten-million-digit decimal prefixes of pi in dependency-free TypeScript"
+version: 1.0.0
+date-released: 2026-07-15
+license: MIT
+repository-code: "https://github.com/AlbatrossMicrosystems/exact-pi"
+authors:
+  - family-names: Ghosh
+    given-names: Sagnik
+    email: albatrossmicrosystems@gmail.com
+    affiliation: "Albatross Microsystems, Chinsurah, West Bengal, India"
+  - family-names: Sarkar
+    given-names: Evan
+    email: skyforgeinteractivestudios@gmail.com
+    affiliation: "Albatross Microsystems, Chinsurah, West Bengal, India"
+keywords:
+  - pi
+  - chudnovsky
+  - binary splitting
+  - arbitrary precision
+  - bigint
+  - bbp
+  - verification
+abstract: >-
+  Computes exact truncated decimal prefixes of pi (verified to ten million
+  digits) using the Chudnovsky series evaluated by binary splitting over
+  native BigInt, with zero runtime dependencies. Correctness is enforced by a
+  guard-band truncation protocol and cross-verified by Machin's formula,
+  BBP hexadecimal digit extraction, and SHA-256 output certificates.

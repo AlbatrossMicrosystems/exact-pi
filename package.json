@@ -1,0 +1,40 @@
+{
+  "name": "exact-pi",
+  "version": "1.0.0",
+  "description": "Exact decimal prefixes of pi to ten million digits and beyond — binary-splitting Chudnovsky on native BigInt, zero runtime dependencies, triple independent cross-verification (Machin, BBP), SHA-256 certificates.",
+  "type": "module",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "authors": [
+    "Sagnik Ghosh <albatrossmicrosystems@gmail.com>",
+    "Evan Sarkar <skyforgeinteractivestudios@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlbatrossMicrosystems/exact-pi.git"
+  },
+  "keywords": [
+    "pi",
+    "chudnovsky",
+    "binary-splitting",
+    "arbitrary-precision",
+    "bigint",
+    "bbp",
+    "machin",
+    "verification"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "tsx --test test/pi.test.ts",
+    "lint": "tsc --noEmit",
+    "demo": "tsx src/cli.ts",
+    "bench": "tsx bench.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.5"
+  }
+}
