@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  * Demo CLI for exact-pi.
  *

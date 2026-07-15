@@ -1,9 +1,25 @@
 {
   "name": "exact-pi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Exact decimal prefixes of pi to ten million digits and beyond — binary-splitting Chudnovsky on native BigInt, zero runtime dependencies, triple independent cross-verification (Machin, BBP), SHA-256 certificates.",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "exact-pi": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "CITATION.cff"
+  ],
+  "sideEffects": false,
   "license": "MIT",
   "authors": [
     "Sagnik Ghosh <albatrossmicrosystems@gmail.com>",
@@ -27,6 +43,8 @@
     "node": ">=20"
   },
   "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "tsc -p tsconfig.build.json",
     "test": "tsx --test test/pi.test.ts",
     "lint": "tsc --noEmit",
     "demo": "tsx src/cli.ts",

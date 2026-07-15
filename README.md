@@ -18,18 +18,16 @@ of π" does not exist* — not as a limitation of hardware or algorithms, but as
 a theorem. What *is* computable is the **exact truncated prefix**: for any
 requested `n`, every one of the `n` digits returned is a true digit of π.
 
-## Quick start
+## Install
 
 ```bash
-npm install          # dev tooling only (tsx, typescript) — zero runtime deps
-npm test             # 12 tests, all engines cross-checked
-npm run demo         # 10,000 digits + verification certificate
-npm run demo -- 100000
-npm run demo -- 50 --print
-npm run bench        # timing table up to 10^6 digits
+npm install exact-pi
 ```
 
-## API
+Node ≥ 20, ESM. Ships compiled JavaScript plus full TypeScript declarations;
+**zero runtime dependencies**.
+
+## Use as a library
 
 ```ts
 import {
@@ -37,10 +35,32 @@ import {
   piHexDigits,       // (count) => hex digits of pi after the point
   verifyPiDigits,    // (digits) => cross-engine + BBP verification report
   certifyPiDigits,   // (digits) => reproducible SHA-256 correctness certificate
+  bbpHexDigits,      // (position, count) => hex digits at arbitrary position
 } from "exact-pi";
 
 computePiDigits(100);
 // "3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679"
+
+const cert = certifyPiDigits(10_000);
+cert.verification.allPassed; // true — Chudnovsky ≡ Machin, BBP spot-checks
+```
+
+## Use as a CLI
+
+```bash
+npx exact-pi              # 10,000 digits + verification certificate
+npx exact-pi 100000       # any digit count
+npx exact-pi 50 --print   # print all digits
+```
+
+## Develop from source
+
+```bash
+git clone https://github.com/AlbatrossMicrosystems/exact-pi && cd exact-pi
+npm install          # dev tooling only (tsx, typescript)
+npm test             # 12 tests, all engines cross-checked
+npm run demo -- 100000
+npm run bench        # timing table up to 10^6 digits
 ```
 
 ## How it works
