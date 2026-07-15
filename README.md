@@ -12,9 +12,9 @@ under 30 seconds, 10,000,000 in under 40 minutes, single-threaded — with
 by three mathematically independent methods discovered across three
 different centuries.
 
-Companion code for the preprint *"Exact Ten-Million-Digit Decimal Prefixes
-of π in Dependency-Free TypeScript: Binary-Splitting Chudnovsky Evaluation
-with Triple Independent Cross-Verification"* (Ghosh & Sarkar, 2026).
+Companion code for the preprint *"exact-pi: a dependency-free TypeScript
+engine for exact decimal prefixes of π, triple cross-verified to ten million
+digits"* (Ghosh & Sarkar, 2026).
 
 ## Why "the exact value" means "an exact prefix"
 
