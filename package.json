@@ -1,6 +1,6 @@
 {
   "name": "exact-pi",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Exact decimal prefixes of pi to ten million digits and beyond — binary-splitting Chudnovsky on native BigInt, zero runtime dependencies, triple independent cross-verification (Machin, BBP), SHA-256 certificates.",
   "type": "module",
   "main": "dist/index.js",
@@ -23,7 +23,7 @@
   "license": "MIT",
   "authors": [
     "Sagnik Ghosh <albatrossmicrosystems@gmail.com>",
-    "Evan Sarkar <skyforgeinteractivestudios@gmail.com>"
+    "Evan Sarkar <evan.official7@gmail.com>"
   ],
   "repository": {
     "type": "git",
