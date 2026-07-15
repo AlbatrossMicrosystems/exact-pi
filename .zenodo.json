@@ -1,0 +1,27 @@
+{
+  "title": "exact-pi: a dependency-free TypeScript engine for exact decimal prefixes of pi, triple cross-verified to ten million digits",
+  "description": "Computes exact truncated decimal prefixes of pi (verified to ten million digits against independent published references) using the Chudnovsky series evaluated by binary splitting over native BigInt, with zero runtime dependencies. Correctness is enforced by a guard-band truncation protocol and cross-verified by Machin's formula, BBP hexadecimal digit extraction, and SHA-256 output certificates. Companion code for the preprint by Ghosh & Sarkar (2026).",
+  "creators": [
+    {
+      "name": "Ghosh, Sagnik",
+      "affiliation": "Albatross Microsystems, Chinsurah, West Bengal, India"
+    },
+    {
+      "name": "Sarkar, Evan",
+      "affiliation": "Albatross Microsystems, Chinsurah, West Bengal, India"
+    }
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "keywords": [
+    "pi",
+    "chudnovsky algorithm",
+    "binary splitting",
+    "arbitrary precision arithmetic",
+    "BigInt",
+    "BBP formula",
+    "TypeScript",
+    "verification"
+  ]
+}
