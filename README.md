@@ -1,6 +1,8 @@
 # exact-pi
 
 [![npm](https://img.shields.io/npm/v/exact-pi)](https://www.npmjs.com/package/exact-pi)
+[![npm downloads](https://img.shields.io/npm/dm/exact-pi)](https://www.npmjs.com/package/exact-pi)
+[![npm total downloads](https://img.shields.io/npm/dt/exact-pi)](https://npm-stat.com/charts.html?package=exact-pi)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21384631.svg)](https://doi.org/10.5281/zenodo.21384631)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![node >= 20](https://img.shields.io/badge/node-%3E%3D20-brightgreen)](package.json)
